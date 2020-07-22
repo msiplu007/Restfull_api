@@ -44,7 +44,7 @@ class AuthController extends Controller
     }
     /**
      * Log the user out (Invalidate the token).
-     *
+     *serve the position
      * @return \Illuminate\Http\JsonResponse
      */
     public function logout()
