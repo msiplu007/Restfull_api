@@ -17,7 +17,6 @@ class AuthController extends Controller
     {
         $this->middleware('auth:api', ['except' => ['login', 'register']]);
     }
-
     /**
      * Get a JWT via given credentials.
      *
@@ -43,7 +42,6 @@ class AuthController extends Controller
     {
         return response()->json(auth()->user());
     }
-
     /**
      * Log the user out (Invalidate the token).
      *
@@ -55,7 +53,6 @@ class AuthController extends Controller
 
         return response()->json(['message' => 'Successfully logged out']);
     }
-
     /**
      * Refresh a token.
      *
@@ -96,7 +93,6 @@ class AuthController extends Controller
      $data['email']=$request->email;
      $data['password']=Hash::make($request->password);
      DB::table('users')->insert($data);
-
      return $this->login($request);
     }
 }
